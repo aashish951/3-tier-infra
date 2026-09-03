@@ -1,0 +1,7 @@
+# .gitignore me ye lines honi chahiye
+*.tfvars
+.terraform/
+*.tfstate
+*.tfstate.backup
+terra-key-ec2
+terra-key-ec2.pub
