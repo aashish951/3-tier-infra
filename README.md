@@ -6,7 +6,7 @@ A production-style **3-tier AWS architecture** provisioned entirely with **Terra
 
 ## 🖼️ Architecture Diagram
 
-![3-Tier Architecture Diagram](./screenshots/architecture-diagram.png)
+![3-Tier Architecture Diagram](./screenshot/architecture-diagram.png)
 
 *VPC `dev-custom-vpc` (10.0.0.0/16) — 2 Availability Zones, 8 subnets, External + Internal ALB, security-group chain from Internet down to RDS.*
 
@@ -105,36 +105,36 @@ Each AWS resource type is isolated into its own Terraform module for reusability
 ## 📸 AWS Console Screenshots
 
 ### VPC & Subnets
-![VPC Overview](./screenshots/vpc-overview.webp)
+![VPC Overview](./screenshot/vpc-overview.webp)
 Custom VPC `dev-custom-vpc` with 8 subnets split across public, app, and DB tiers.
 
-![Subnets](./screenshots/subnets.webp)
+![Subnets](./screenshot/subnets.webp)
 All 8 subnets (public, app, db) across `us-east-1a` and `us-east-1b`.
 
 ### Routing & Gateways
-![Route Tables](./screenshots/route-tables.webp)
+![Route Tables](./screenshot/route-tables.webp)
 Route tables — main, `dev-public-rt`, `dev-db-rt`.
 
-![Internet Gateway](./screenshots/internet-gateway.webp)
+![Internet Gateway](./screenshot/internet-gateway.webp)
 `dev-public-igw` attached to the VPC.
 
-![NAT Gateway](./screenshots/nat-gateway.webp)
+![NAT Gateway](./screenshot/nat-gateway.webp)
 `dev-nat` — enables outbound internet access for the private app tier.
 
 ### Compute
-![EC2 Instances](./screenshots/ec2-instances.webp)
+![EC2 Instances](./screenshot/ec2-instances.webp)
 Running instances: Frontend-1, Frontend-2, Backend-1, Backend-2, Bastion Host.
 
 ### Security
-![Security Groups](./screenshots/security-groups.webp)
+![Security Groups](./screenshot/security-groups.webp)
 Security groups managed by Terraform — `ext-alb-sg`, `int-alb-sg`, `app-tier-sg`, `rds-sg`, `bastion-sg`.
 
 ### Load Balancing
-![Load Balancers](./screenshots/alb.webp)
+![Load Balancers](./screenshot/alb.webp)
 External (internet-facing) and Internal ALB, both active across 2 AZs.
 
 ### Database
-![RDS Database](./screenshots/rds-database.webp)
+![RDS Database](./screenshot/rds-database.webp)
 MySQL RDS instance, `Available`, deployed in the isolated DB subnet group.
 
 ---
